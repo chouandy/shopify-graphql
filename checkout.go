@@ -1,20 +1,18 @@
 package shopifygraphql
 
-import "github.com/shurcooL/graphql"
-
 // CheckoutCreateInput checkout create input
 type CheckoutCreateInput struct {
-	Email                 graphql.String           `json:"email,omitempty"`
+	Email                 string                   `json:"email,omitempty"`
 	LineItems             []*CheckoutLineItemInput `json:"lineItems,omitempty"`
 	CustomAttributes      []*AttributeInput        `json:"customAttributes,omitempty"`
-	AllowPartialAddresses graphql.Boolean          `json:"allowPartialAddresses,omitempty"`
-	Note                  graphql.String           `json:"note,omitempty"`
+	AllowPartialAddresses bool                     `json:"allowPartialAddresses,omitempty"`
+	Note                  string                   `json:"note,omitempty"`
 	ShippingAddress       *MailingAddressInput     `json:"shippingAddress,omitempty"`
 }
 
 // CheckoutLineItemInput checkout line item input
 type CheckoutLineItemInput struct {
-	VariantID        graphql.ID        `json:"variantId,omitempty"`
-	Quantity         graphql.Int       `json:"quantity,omitempty"`
+	VariantID        string            `json:"variantId,omitempty"`
+	Quantity         int               `json:"quantity,omitempty"`
 	CustomAttributes []*AttributeInput `json:"customAttributes,omitempty"`
 }

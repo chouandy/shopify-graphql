@@ -1,17 +1,15 @@
 package shopifygraphql
 
-import "github.com/shurcooL/graphql"
-
 // MailingAddressInput mailing address input
 type MailingAddressInput struct {
-	Address1  graphql.String `json:"address1,omitempty"`
-	Address2  graphql.String `json:"address2,omitempty"`
-	City      graphql.String `json:"city,omitempty"`
-	Company   graphql.String `json:"company,omitempty"`
-	Country   graphql.String `json:"country,omitempty"`
-	FirstName graphql.String `json:"firstName,omitempty"`
-	LastName  graphql.String `json:"lastName,omitempty"`
-	Phone     graphql.String `json:"phone,omitempty"`
-	Province  graphql.String `json:"province,omitempty"`
-	Zip       graphql.String `json:"zip,omitempty"`
+	Address1  string `json:"address1,omitempty"`
+	Address2  string `json:"address2,omitempty"`
+	City      string `json:"city,omitempty"`
+	Company   string `json:"company,omitempty"`
+	Country   string `json:"country,omitempty"`
+	FirstName string `json:"firstName,omitempty"`
+	LastName  string `json:"lastName,omitempty"`
+	Phone     string `json:"phone,omitempty"`
+	Province  string `json:"province,omitempty"`
+	Zip       string `json:"zip,omitempty"`
 }
