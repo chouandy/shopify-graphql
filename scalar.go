@@ -14,15 +14,15 @@ func ID(id string) string {
 
 // ProductID convert product id to graphql id
 func ProductID(id int) string {
-	return fmt.Sprintf(shopifyGIDFormat, "Product", id)
+	return ID(fmt.Sprintf(shopifyGIDFormat, "Product", id))
 }
 
 // ProductVariantID convert product variant id to graphql id
 func ProductVariantID(id int) string {
-	return fmt.Sprintf(shopifyGIDFormat, "ProductVariant", id)
+	return ID(fmt.Sprintf(shopifyGIDFormat, "ProductVariant", id))
 }
 
 // OrderID convert order id to graphql id
 func OrderID(id int) string {
-	return fmt.Sprintf(shopifyGIDFormat, "Order", id)
+	return ID(fmt.Sprintf(shopifyGIDFormat, "Order", id))
 }
