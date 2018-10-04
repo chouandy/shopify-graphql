@@ -12,6 +12,6 @@ type Transport struct {
 
 // RoundTrip http Transport RoundTrip interface
 func (t *Transport) RoundTrip(req *http.Request) (*http.Response, error) {
-	req.Header.Add(StorefrontAccessTokenHeader, t.StorefrontAccessToken)
+	req.Header.Set(StorefrontAccessTokenHeader, t.StorefrontAccessToken)
 	return http.DefaultTransport.RoundTrip(req)
 }
