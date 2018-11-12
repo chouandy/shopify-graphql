@@ -15,6 +15,10 @@ go get -u github.com/chouandy/shopify-graphql
 Construct a Shopify GraphQL client, specifying the Shopify shop domain and storefront access token. Then, you can use it to make GraphQL queries and mutations.
 
 ```Go
-client := shopifygraphql.NewClient("example.myshopify.com", "storefront_access_token")
+// Admin API Client
+client := shopifygraphql.NewAdminClient("example.myshopify.com", "admin_access_token")
+// Storefront API Client
+client := shopifygraphql.NewStorefrontClient("example.myshopify.com", "storefront_access_token")
+
 // Use client...
 ```
