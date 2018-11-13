@@ -24,6 +24,11 @@ func ID(gid string) int {
 	return id
 }
 
+// ShopID convert shop id to graphql id
+func ShopID(id int) string {
+	return EncodeGID(fmt.Sprintf(shopifyGIDFormat, "Shop", id))
+}
+
 // ProductID convert product id to graphql id
 func ProductID(id int) string {
 	return EncodeGID(fmt.Sprintf(shopifyGIDFormat, "Product", id))
