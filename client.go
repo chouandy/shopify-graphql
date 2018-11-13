@@ -33,7 +33,7 @@ func NewAdminClient(domain, accessToken string) *graphql.Client {
 		},
 	}
 	// Build graphql url
-	url := "https://" + domain + "/admin/api/graphql"
+	url := "https://" + domain + "/admin/api/graphql.json"
 
 	// New graphql client
 	return graphql.NewClient(url, httpClient)
@@ -66,7 +66,7 @@ func NewStorefrontClient(domain, accessToken string) *graphql.Client {
 		},
 	}
 	// Build graphql url
-	url := "https://" + domain + "/api/graphql"
+	url := "https://" + domain + "/api/graphql.json"
 
 	// New graphql client
 	return graphql.NewClient(url, httpClient)
