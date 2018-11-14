@@ -1,7 +1,7 @@
 package shopifygraphql
 
-// ProductCreateInput product create input struct
-type ProductCreateInput struct {
+// ProductInput product input struct
+type ProductInput struct {
 	CollectionsToJoin      []string              `json:"collectionsToJoin,omitempty"`
 	CollectionsToLeave     []string              `json:"collectionsToLeave,omitempty"`
 	DescriptionHTML        string                `json:"descriptionHtml,omitempty"`
