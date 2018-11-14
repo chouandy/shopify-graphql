@@ -9,11 +9,6 @@ import (
 
 var shopifyGIDFormat = "gid://shopify/%s/%d"
 
-// EncodeGID base64 encode id
-func EncodeGID(gid string) string {
-	return base64.URLEncoding.EncodeToString([]byte(gid))
-}
-
 // ID retrieve id
 func ID(gid string) int {
 	// Split gid with /
@@ -24,22 +19,17 @@ func ID(gid string) int {
 	return id
 }
 
-// ShopID convert shop id to graphql id
-func ShopID(id int) string {
-	return EncodeGID(fmt.Sprintf(shopifyGIDFormat, "Shop", id))
+// GID retrieve id
+func GID(resource string, id int) string {
+	return fmt.Sprintf(shopifyGIDFormat, resource, id)
 }
 
-// ProductID convert product id to graphql id
-func ProductID(id int) string {
-	return EncodeGID(fmt.Sprintf(shopifyGIDFormat, "Product", id))
+// EncodeGID base64 encode gid
+func EncodeGID(gid string) string {
+	return base64.URLEncoding.EncodeToString([]byte(gid))
 }
 
-// ProductVariantID convert product variant id to graphql id
-func ProductVariantID(id int) string {
-	return EncodeGID(fmt.Sprintf(shopifyGIDFormat, "ProductVariant", id))
-}
-
-// OrderID convert order id to graphql id
-func OrderID(id int) string {
-	return EncodeGID(fmt.Sprintf(shopifyGIDFormat, "Order", id))
+// EncodedGID base64 encoded gid
+func EncodedGID(resource string, id int) string {
+	return EncodeGID(GID(resource, id))
 }

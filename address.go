@@ -1,6 +1,6 @@
 package shopifygraphql
 
-// MailingAddressInput mailing address input
+// MailingAddressInput mailing address input struct
 type MailingAddressInput struct {
 	Address1  string `json:"address1,omitempty"`
 	Address2  string `json:"address2,omitempty"`
