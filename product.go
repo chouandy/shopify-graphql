@@ -12,7 +12,7 @@ type ProductInput struct {
 	Metafields             []MetafieldInput      `json:"metafields,omitempty"`
 	Options                []string              `json:"options,omitempty"`
 	ProductType            string                `json:"productType,omitempty"`
-	RedirectNewHandle      bool                  `json:"redirectNewHandle,omitempty"`
+	RedirectNewHandle      *bool                 `json:"redirectNewHandle,omitempty"`
 	SEO                    *SEOInput             `json:"seo,omitempty"`
 	Tags                   []string              `json:"tags,omitempty"`
 	TemplateSuffix         string                `json:"templateSuffix,omitempty"`

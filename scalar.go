@@ -7,6 +7,10 @@ import (
 	"strings"
 )
 
+/* ---------------------- */
+/*           ID           */
+/* ---------------------- */
+
 var shopifyGIDFormat = "gid://shopify/%s/%d"
 
 // ID retrieve id
@@ -33,3 +37,13 @@ func EncodeGID(gid string) string {
 func EncodedGID(resource string, id int) string {
 	return EncodeGID(GID(resource, id))
 }
+
+/* ------------------------ */
+/*           Type           */
+/* ------------------------ */
+
+// Bool bool
+func Bool(v bool) *bool { return &v }
+
+// BoolValue bool value
+func BoolValue(v *bool) bool { return *v }

@@ -19,10 +19,10 @@ type ProductVariantInput struct {
 	Position             int                   `json:"position,omitempty"`
 	Price                *decimal.Decimal      `json:"price,omitempty"`
 	ProductID            string                `json:"productId,omitempty"`
-	RequireShipping      bool                  `json:"requiresShipping,omitempty"`
+	RequireShipping      *bool                 `json:"requiresShipping,omitempty"`
 	Sku                  string                `json:"sku,omitempty"`
 	TaxCode              string                `json:"taxCode,omitempty"`
-	Taxable              bool                  `json:"taxable,omitempty"`
+	Taxable              *bool                 `json:"taxable,omitempty"`
 	Title                string                `json:"title,omitempty"`
 	Weight               *decimal.Decimal      `json:"weight,omitempty"`
 	WeightUnit           string                `json:"weightUnit,omitempty"`

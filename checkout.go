@@ -5,7 +5,7 @@ type CheckoutCreateInput struct {
 	Email                 string                  `json:"email,omitempty"`
 	LineItems             []CheckoutLineItemInput `json:"lineItems,omitempty"`
 	CustomAttributes      []AttributeInput        `json:"customAttributes,omitempty"`
-	AllowPartialAddresses bool                    `json:"allowPartialAddresses,omitempty"`
+	AllowPartialAddresses *bool                   `json:"allowPartialAddresses,omitempty"`
 	Note                  string                  `json:"note,omitempty"`
 	ShippingAddress       *MailingAddressInput    `json:"shippingAddress,omitempty"`
 }
