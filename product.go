@@ -20,3 +20,8 @@ type ProductInput struct {
 	Variants               []ProductVariantInput `json:"variants,omitempty"`
 	Vendor                 string                `json:"vendor,omitempty"`
 }
+
+// ProductDeleteInput product delete input struct
+type ProductDeleteInput struct {
+	ID string `json:"id,omitempty"`
+}
