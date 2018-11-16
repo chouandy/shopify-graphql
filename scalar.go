@@ -17,8 +17,13 @@ var shopifyGIDFormat = "gid://shopify/%s/%d"
 func ID(gid string) int {
 	// Split gid with /
 	substrings := strings.Split(gid, "/")
+	// Get id string
+	idStr := substrings[len(substrings)-1]
+	if i := strings.Index(idStr, "?"); i > 0 {
+		idStr = idStr[0:i]
+	}
 	// Convert str id to int
-	id, _ := strconv.Atoi(substrings[len(substrings)-1])
+	id, _ := strconv.Atoi(idStr)
 
 	return id
 }

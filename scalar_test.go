@@ -21,6 +21,10 @@ func TestID(t *testing.T) {
 			gid:      "gid://shopify/Product/632910392",
 			expected: 632910392,
 		},
+		{
+			gid:      "gid://shopify/FulfillmentService/301629553?id=true",
+			expected: 301629553,
+		},
 	}
 
 	for i, testCase := range testCases {
