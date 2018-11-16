@@ -2,6 +2,7 @@ package shopifygraphql
 
 import (
 	"fmt"
+	"reflect"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -106,5 +107,55 @@ func TestEncodedGID(t *testing.T) {
 		t.Run(fmt.Sprintf("TestCase[%d]", i+1), func(t *testing.T) {
 			assert.Equal(t, testCase.expected, EncodedGID(testCase.resource, testCase.id))
 		})
+	}
+}
+
+func TestBool(t *testing.T) {
+	cases := []struct {
+		value    bool
+		expected string
+	}{
+		{
+			true,
+			"*bool",
+		},
+		{
+			false,
+			"*bool",
+		},
+	}
+
+	for _, c := range cases {
+		actual := reflect.TypeOf(Bool(c.value)).String()
+		if actual != c.expected {
+			t.Errorf("Bool(%v): expected %s, actual %s", c.value, c.expected, actual)
+		}
+	}
+}
+
+func TestBoolValue(t *testing.T) {
+	cases := []struct {
+		value    *bool
+		expected string
+	}{
+		{
+			Bool(true),
+			"bool",
+		},
+		{
+			Bool(false),
+			"bool",
+		},
+		{
+			nil,
+			"bool",
+		},
+	}
+
+	for _, c := range cases {
+		actual := reflect.TypeOf(BoolValue(c.value)).String()
+		if actual != c.expected {
+			t.Errorf("BoolValue(%v): expected %s, actual %s", c.value, c.expected, actual)
+		}
 	}
 }
