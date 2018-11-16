@@ -48,7 +48,14 @@ func EncodedGID(resource string, id int) string {
 /* ------------------------ */
 
 // Bool bool
-func Bool(v bool) *bool { return &v }
+func Bool(v bool) *bool {
+	return &v
+}
 
 // BoolValue bool value
-func BoolValue(v *bool) bool { return *v }
+func BoolValue(v *bool) bool {
+	if v != nil {
+		return *v
+	}
+	return false
+}
