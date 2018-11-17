@@ -7,5 +7,5 @@ type MetafieldInput struct {
 	Key         string      `json:"key,omitempty"`
 	Namespace   string      `json:"namespace,omitempty"`
 	Value       interface{} `json:"value,omitempty"`
-	ValueType   string      `json:"value_type,omitempty"`
+	ValueType   string      `json:"valueType,omitempty"`
 }
